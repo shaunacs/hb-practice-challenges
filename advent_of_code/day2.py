@@ -30,3 +30,23 @@ def num_is_valid(password_lst):
 
     return num_valid
 
+
+def new_is_valid(password_lst):
+    """Returns number of passwords valid based on new criteria"""
+
+    num_valid = 0
+
+    for password in password_lst:
+        first_loc = int(password[0][0])
+        second_loc = int(password[0][1])
+        letter = password[1]
+        given_password = password[2]
+
+        if given_password[first_loc - 1] == letter and given_password[second_loc - 1] == letter:
+            pass
+        elif given_password[first_loc - 1] != letter and given_password[second_loc -1] != letter:
+            pass
+        elif given_password[first_loc - 1] == letter or given_password[second_loc - 1] == letter:
+            num_valid += 1
+    
+    return num_valid
