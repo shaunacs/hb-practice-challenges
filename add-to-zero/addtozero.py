@@ -24,15 +24,11 @@ zero for both numbers, and they sum to zero:
 def add_to_zero(nums):
     """Given list of ints, return True if any two nums sum to 0."""
 
-    # PSEUDOCODE
-    # loop over list
-    # another loop - if num + num = 0 return True
-    # else return False
+    set_nums = set(nums)
 
-    for num in nums:
-        for num2 in nums:
-            if num + num2 == 0:
-                return True
+    for num in set_nums:
+        if -num in set_nums:
+            return True
     
     return False
 
